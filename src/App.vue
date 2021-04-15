@@ -1,6 +1,6 @@
 <template>
-  <div class="flex h-screen justify-center items-center mt-6 flex-col">
-    <div class="flex">
+  <div class="flex h-screen justify-center items-center flex-col">
+    <div class="flex flex-wrap w-11/12">
       <template v-for="(_m, r) in matrix">
         <div v-for="(_a, a) in _m"
              :class="{
@@ -9,7 +9,7 @@
           'bg-yellow-400': a === EXHALE,
           'border-4 border-gray-200': row === r && a === action
         }"
-             class="w-4 h-6 block mx-0.5 rounded">
+             class="w-4 h-6 block m-0.5 rounded">
         </div>
       </template>
     </div>
@@ -53,17 +53,49 @@ import { ref } from 'vue'
 const started = ref(false)
 let interval
 
+// const matrix = [
+//   [5, 11, 16],
+//   [21, 27, 32],
+//   [37, 44, 49],
+//   [54, 1, 6],
+//   [11, 19, 24],
+//   [29, 37, 42],
+//   [47, 56, 1],
+//   [6, 16, 21],
+//   [26, 37, 42],
+//   [47, 59, 4]
+// ]
+
+// let newMatrix = []
+
+// let prev = 0
+// for (r in matrix) {
+//   newMatrix[r] = []
+//   for (c in matrix[r]) {
+    
+//     if (matrix[r][c] > prev) {
+//       newMatrix[r][c] = matrix[r][c] - prev   
+//     } else {
+//       newMatrix[r][c] = 60 - prev + matrix[r][c]
+//     }
+    
+    
+      
+//     prev = matrix[r][c]
+//   }
+// }
+
 const matrix = [
-  [5, 11, 16],
-  [21, 27, 32],
-  [37, 44, 49],
-  [54, 1, 6],
-  [11, 19, 24],
-  [29, 37, 42],
-  [47, 56, 1],
-  [6, 16, 21],
-  [26, 37, 42],
-  [47, 59, 4]
+  [ 5, 6, 5 ],  
+  [ 5, 6, 5 ],
+  [ 5, 7, 5 ],  
+  [ 5, 7, 5 ],
+  [ 5, 8, 5 ],  
+  [ 5, 8, 5 ],
+  [ 5, 9, 5 ],  
+  [ 5, 10, 5 ],
+  [ 5, 11, 5 ], 
+  [ 5, 12, 5 ]
 ]
 
 const BREATH = 0
