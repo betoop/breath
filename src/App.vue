@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-screen justify-center items-center flex-col">
-    <div class="flex flex-wrap w-11/12">
+    <div class="flex flex-wrap justify-center w-11/12">
       <template v-for="(_m, r) in matrix">
         <div v-for="(_a, a) in _m"
              :class="{
